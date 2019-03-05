@@ -1,6 +1,6 @@
 var listOfWords = {
   words: [
-    'Armadillo','Javelina','Prong Horn',
+    'Armadillo','Javelina','Pronghorn',
     'Alamo','Washington on the Brazos','San Jacinto',
     'Houston','Dallas','Austin',
     'Tumbleweed','Six shooter','Rodeo',
@@ -20,11 +20,9 @@ var listOfWords = {
     for(let x = 0; x <= phrase.length - 1; x++) {
         // get the individual words from the phrase and create an array with the split method
         let scrambledWord = phrase[x].split('');
-        // get the length of the array so we can loop through
-        let wordLength = scrambledWord.length;
 
-        //loop through the word
-        for(let i = wordLength - 1; i > 0; i--) {
+        //loop through the word 
+        for(let i = scrambledWord.length - 1; i > 0; i--) {
             // get a random position in the word
             let j = Math.floor(Math.random() * (i + 1));
             // do a sort similar to bubble sort. i starts as the last position. move it aside to the temp
@@ -34,7 +32,7 @@ var listOfWords = {
             // now set the random postion to the value that was originally i
             scrambledWord[j] = temp;
 
-            // replace the original word in the phrase with scrambled array. 
+            // replace the original word in the phrase with scrambledWord array. 
             // join converts it back to a string
             phrase[x] = scrambledWord.join('');
         }
